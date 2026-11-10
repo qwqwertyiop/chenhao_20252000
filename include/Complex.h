@@ -13,9 +13,8 @@
 
 class Complex {
 private:
-    // TODO(1): 在这里声明复数的数据成员（至少 2 个 double）
-    // 提示：double real;  实部
-    //       double imag;  虚部
+    double real;  // 实部
+    double imag;  // 虚部
 
 public:
     // 构造函数
