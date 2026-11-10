@@ -16,9 +16,7 @@
 using namespace std;
 
 // TODO(2): 用初始化列表实现，例如 : real(r), imag(i)
-Complex::Complex(double r, double i) {
-    (void)r;  // 占位，实现后删掉
-    (void)i;
+Complex::Complex(double r, double i) : real(r), imag(i) {
 }
 
 // TODO(3): 实现析构函数（本类没有动态内存，函数体可以为空）
@@ -27,27 +25,29 @@ Complex::~Complex() {
 
 // TODO(4): 复数相加
 Complex Complex::operator+(const Complex& other) const {
-    (void)other;
-    return Complex();  // 占位，实现后删掉
+    return Complex(real + other.real, imag + other.imag);
 }
 
 // TODO(5): 复数相减
 Complex Complex::operator-(const Complex& other) const {
-    (void)other;
-    return Complex();  // 占位，实现后删掉
+    return Complex(real - other.real, imag - other.imag);
 }
 
 // TODO(6): 按约定格式打印
 void Complex::print() const {
-    cout << "TODO" << endl;
+    if (imag >= 0) {
+        cout << real << " + " << imag << "i" << endl;
+    } else {
+        cout << real << " - " << -imag << "i" << endl;
+    }
 }
 
 // TODO(7)
 double Complex::getReal() const {
-    return 0;  // 占位
+    return real;
 }
 
 // TODO(8)
 double Complex::getImag() const {
-    return 0;  // 占位
+    return imag;
 }
